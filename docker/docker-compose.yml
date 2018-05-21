@@ -6,6 +6,12 @@ services:
       - "8000:8000"
     links:
       - db
+    environment:
+      - DB_USER=postgres
+      - SECRET_KEY=lksdf98wrhkjs88dsf8-324ksdm
+      - DB_NAME=postgres
+      - DB_HOST=db
+      - DB_PORT=5432
     depends_on:
       - db
 

@@ -1,17 +1,19 @@
 # Overrides
 from .settings import *  # noqa: F401
+import os
 
-SECRET_KEY = 'lksdf98wrhkjs88dsf8-324ksdm'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
     }
 }
 
